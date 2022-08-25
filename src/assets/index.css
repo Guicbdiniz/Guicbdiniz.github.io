@@ -1,5 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 
+@keyframes main-position {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes footer-position {
+  from {
+    right: 100vw;
+  }
+  to {
+    right: 5vw;
+  }
+}
+
+@keyframes icon-size {
+  from {
+    height: 10px;
+  }
+  to {
+    height: 180px;
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -10,53 +37,38 @@ body {
   background-color: #111;
   color: #fff;
   font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
 }
 
-header {
+main {
+  margin: 50px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vh;
-  margin: auto 20vh;
-  font-size: 4vh;
+  font-size: 8vh;
+  animation: main-position 0.2s linear;
 }
 
-.me {
-  font-size: 5vh;
+main .me {
+  font-size: 9vh;
   color: #5860ad;
 }
 
-a {
-  color: #fff;
-  font-style: normal;
-  font-variant: normal;
-  text-decoration-line: none;
+footer {
+  position: absolute;
+  bottom: 5vh;
+  right: 100vw;
+  animation: footer-position 0.3s linear 0.5s;
+  animation-fill-mode: forwards;
 }
 
-h1 {
-  text-align: center;
-  font-size: 12vh;
-  text-shadow: 5vh -5vh 0.5vh #444;
-}
-
-.timeline {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.entry {
-  background-color: aqua;
-  min-height: 20vh;
-  width: 50vw;
-  border-color: #fff;
-}
-
-.left {
-}
-
-.right {
-  align-self: flex-end;
+footer img {
+  height: 180px;
+  animation: icon-size 0.3s linear 0.5s;
+  animation-fill-mode: forwards;
 }
